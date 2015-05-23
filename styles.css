@@ -1,0 +1,156 @@
+html{
+  background: black;
+
+}
+body {
+  width: 1224px;
+  height: 960px;
+  margin: auto;
+
+}
+.main_wrapper{
+  margin: 0px;
+
+}
+.content_area {
+  width: 1004px;
+  height: 960px;
+  float: right;
+  background: skyblue;
+  padding: 5px;
+
+}
+
+.sidebar{
+  float: left;
+  width: 200px;
+  height: 960px;
+  background: #8B0000;
+  padding: 5px;
+
+}
+
+.content_area + .sidebar{
+  margin: 0px;
+}
+
+#search_area{
+  width: 500px;
+  height: 500px;
+  float: right;
+}
+
+#update_area{
+  width: 500px;
+  height: 500px;
+  float: right;
+
+}
+
+#image_area{
+  width: 500px;
+  height: 500px;
+  float: left;
+
+}
+article{
+
+}
+
+main>h1{
+  text-align: center;
+
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+h3 table{
+  
+}
+
+#loginForm{
+
+
+}
+
+#loginForm p{
+
+}
+
+#loginForm input{
+
+}
+
+.button{
+  background: #00CC33;
+  border: black solid 1px;
+  color: white;
+  font-weight: bold;
+}
+
+input {
+  border: black solid 1px;
+  margin-bottom: 5px;
+  padding: 4px
+
+}
+
+select {
+  border: black solid 1px;
+  margin-bottom: 5px;
+  padding: 4px
+}
+
+table
+{ margin: 10px 0 30px 0;}
+
+table tr th, table tr td
+{ background: #777;
+  color: #FFF;
+  padding: 7px 4px;
+  text-align: left;}
+
+table tr td
+{ background: white;
+  color: #47433F;
+  border: 1px solid black;
+}
+
+.profile_image {
+  height: 160px;
+  width: 160px;
+  border: 1px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: black;
+}
+
+.side_links{
+
+}
+
+.profile_links {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background: url(link.png);
+    display: block;
+}
+
+.update_links{
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background: url(add.png);
+  display: block;
+  float: right;
+
+}

@@ -1,0 +1,66 @@
+<td><?php echo $eid; ?></td>
+<td><?php echo $institution; ?></td>
+<td><?php echo $pid; ?></td>
+
+
+<td><?php echo $eid; ?></td>
+    <td><?php echo $company; ?></td>
+    <td><?php echo $job; ?></td>
+    <td><?php echo $pid; ?></td>
+
+    //$fname = null;
+    //$lname = null;
+    //$sex = null;
+
+    //$profile = "select * from profile where //firstName='$fname' OR  lastName='$lname' OR sex='$sex';
+    //";
+
+
+
+
+
+
+----------------------------------
+
+
+
+
+
+<article>
+<h2>View the latest info about</h2>
+<table style="width:100%; border-spacing:0;">
+
+          <tr>
+            <th>Employment ID</th>
+            <th>Company</th>
+            <th>Job Role</th>
+            <th>Profile ID</th>
+          </tr>
+
+
+<?php readEmployment();
+
+$link_id = $_GET['link'];
+
+$employment = "SELECT * FROM employment where profileID='$link_id'";
+
+$employment_data = mysqli_query($connection, $employment);
+
+while($row = mysqli_fetch_array($employment_data)) {
+
+ $eid = $row[0];
+ $company = $row[1];
+ $job = $row[2];
+ $pid = $row[5];
+?>
+<tr>
+  <td><?php echo $eid; ?></td>
+      <td><?php echo $company; ?></td>
+      <td><?php echo $job; ?></td>
+      <td><?php echo $pid; ?></td>
+</tr>
+
+<?php }?>
+
+</table>
+</article>
