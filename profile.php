@@ -14,48 +14,59 @@
 
   <?php include 'includes/layouts/profile_area.php';?>
 
+
+
+  <article id="search_area">
+
+    <?php print_r($_GET); ?>
+    <?php print_r($_POST); ?>
+    <?php print_r($_SESSION); ?>
+    <?php echo $fname; ?>
+
+</article>
+
     <article>
     <h2>View the latest info about users first and lastname</h2>
-
     <table style="width:100%; border-spacing:0;">
               <tr>
-                <th>Employment ID</th>
-                <th>Company</th>
-                <th>Job Role</th>
                 <th>Profile ID</th>
+                <th>First name</th>
+                <th>Last Name</th>
+                <th>DOB</th>
+                <th>Sex</th>
               </tr>
     <tr>
 
 
     <?php
 
-    if(!isset($_GET['link'])){
-      $link_id = null;
-    }
-    else {
-      $link_id = $_GET['link'];
-    }
+    //if(!isset($_GET['link'])){
+    //  $link_id = " ";
+    //}
+    //else {
+    //  $link_id = $_GET['link'];
+    //}
 
 // change this query to show lateste updates
 
-    $employment = "SELECT * FROM employment where profileID='$link_id'";
+    $profile = "SELECT * FROM profile where profileID='$link_id'";
 
-    $result = mysqli_query($connection, $employment);
+    $profile_data = mysqli_query($connection, $profile);
 
-    while($row = mysqli_fetch_array($result)) {
-
-       $eid = $row[0];
-       $company = $row[1];
-       $job = $row[2];
-       $pid = $row[5];
+// function !
+    while($row = mysqli_fetch_array($profile_data)) {
+      $pid = $row[0];
+      $fname = $row[1];
+      $lname = $row[2];
+      $dob = $row[3];
+      $sex = $row[4];
 
     ?>
-
-    <td><?php echo $eid; ?></td>
-    <td><?php echo $company; ?></td>
-    <td><?php echo $job; ?></td>
     <td><?php echo $pid; ?></td>
-
+    <td><?php echo $fname; ?></td>
+    <td><?php echo $lname; ?></td>
+    <td><?php echo $dob; ?></td>
+    <td><?php echo $sex; ?></td>
 
     </tr>
 

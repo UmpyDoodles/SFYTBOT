@@ -49,9 +49,9 @@ mysqli_close($connection);
 
   <div class="content_area">
   <main>
-    <article id="update_area">
-    <h2>Update Records</h2>
-    <p>the search will allow data to be read from the profile table if any matches are found those rows will be display with links.</p>
+    <article class="update_area">
+    <h2> Records</h2>
+    <p>this page will have seperate connection to different table / process.</p>
     <form id="updateForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <p>Firstname:</p>
     <input type="text" name="fname"/> <br>
@@ -66,6 +66,58 @@ mysqli_close($connection);
     </form>
     </article>
 
+
+    <article class="update_area">
+    <h2>Residential Records</h2>
+    <p>
+    </p>
+    <form id="updateForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <p>Firstname:</p>
+    <input type="text" name="fname"/> <br>
+    <p>Lastname:</p>
+    <input type="text" name="lname"/> <br>
+
+    <select>
+    <option name="male">Male</option>
+    <option name="female">Female</option>
+    </select>
+    <input class="button" type="submit" name="update" value="UPDATE"/>
+    </form>
+    </article>
+
+    <article class="update_area">
+    <h2>Education Records</h2>
+    <p></p>
+    <form id="updateForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <p>Firstname:</p>
+    <input type="text" name="fname"/> <br>
+    <p>Lastname:</p>
+    <input type="text" name="lname"/> <br>
+
+    <select>
+    <option name="male">Male</option>
+    <option name="female">Female</option>
+    </select>
+    <input class="button" type="submit" name="update" value="UPDATE"/>
+    </form>
+    </article>
+
+    <article class="update_area">
+    <h2>Employment Records</h2>
+    <p></p>
+    <form id="updateForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <p>Firstname:</p>
+    <input type="text" name="fname"/> <br>
+    <p>Lastname:</p>
+    <input type="text" name="lname"/> <br>
+
+    <select>
+    <option name="male">Male</option>
+    <option name="female">Female</option>
+    </select>
+    <input class="button" type="submit" name="update" value="UPDATE"/>
+    </form>
+    </article>
 </main>
 </div>
 <div class="sidebar">

@@ -40,17 +40,18 @@ body {
   float: right;
 }
 
-#update_area{
-  width: 500px;
-  height: 500px;
-  float: right;
-
-}
-
-#image_area{
+.update_area{
   width: 500px;
   height: 500px;
   float: left;
+
+}
+
+.image_area{
+  width: 500px;
+  height: 500px;
+  float: left;
+
 
 }
 article{

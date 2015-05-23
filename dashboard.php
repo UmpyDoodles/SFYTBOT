@@ -8,10 +8,10 @@ $dOB = $_POST['dateBirth'];
 
 $profile = "select * from profile where firstName='$fname' OR  lastName='$lname' OR sex='$gender' OR sex='$dOB'";
 
-$result = mysqli_query($connection, $profile);
+$profile_data = mysqli_query($connection, $profile);
 
 if(mysqli_num_rows($result)>0){
-   $num_rows = mysqli_num_rows($result);
+   $num_rows = mysqli_num_rows($profile_data);
 }
 else {
   $num_rows = "0";
@@ -36,25 +36,6 @@ else {
     <h1>Welcome to the Dashboard, <?php echo $_SESSION['uname']; ?></h1>
     <p>From the Dashboard you will be able to create, read, update and delete information from profiles. it is the main control panel for various administrative tasks.</p>
 
-    <article id="search_area">
-    <h2>Find Records</h2>
-    <p>the search will allow data to be read from the profile table if any matches are found those rows will be display with links.</p>
-    <form id="searchForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      <p>Firstname:</p>
-  <input type="text" name="fname"/> <br>
-  <p>Lastname:</p>
-<input type="text" name="lname"/> <br>
-<p>DOB:</p>
-<input type="date" name="dateBirth"/> <br>
-  <select name="checkGender">
-    <option name="male" value="male">Male</option>
-    <option name="female" value="female">Female</option>
-  </select>
-
-   <input class="button" type="submit" name="search" value="SEARCH"/>
-    </form>
-    </article>
-
 <article class="image_area">
   <h2>View Profiles</h2>
   <p>put basic info when record gets shown, location</p>
@@ -63,8 +44,27 @@ else {
 
   <?php print_r($_GET); ?>
   <?php print_r($_POST); ?>
+  <?php print_r($_SESSION); ?>
+
 </article>
 
+<article id="search_area">
+<h2>Find Records</h2>
+<p>the search will allow data to be read from the profile table if any matches are found those rows will be display with links.</p>
+<form id="searchForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <p>Firstname:</p>
+<input type="text" name="fname"/> <br>
+<p>Lastname:</p>
+<input type="text" name="lname"/> <br>
+<p>DOB:</p>
+<input type="date" name="dateBirth"/> <br>
+<select name="checkGender">
+<option name="male" value="male">Male</option>
+<option name="female" value="female">Female</option>
+</select>
+<input class="button" type="submit" name="search" value="SEARCH"/>
+</form>
+</article>
 
     <article>
     <h3><?php echo $num_rows;?> profiles have been matched!</h3>
@@ -76,13 +76,18 @@ else {
                 <th>Last Name</th>
                 <th>DOB</th>
                 <th>Sex</th>
+
+                <th>GO</th>
+                <th>AD</th>
+                <th>UL</th>
+                <th>DL</th>
+                <th>RE</th>
               </tr>
     <tr>
 
     <?php
 
-    while($row = mysqli_fetch_array($result)) {
-
+    while($row = mysqli_fetch_array($profile_data)) {
        $pid = $row[0];
        $fname = $row[1];
        $lname = $row[2];
