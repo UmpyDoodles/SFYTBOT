@@ -8,10 +8,6 @@ $dOB = $_POST['dateBirth'];
 
 $profile = "select * from profile where firstName='$fname' OR  lastName='$lname' OR sex='$gender' OR sex='$dOB'";
 
-
-
-//$profile = "SELECT * FROM profile";
-
 $result = mysqli_query($connection, $profile);
 
 if(mysqli_num_rows($result)>0){
