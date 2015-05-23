@@ -59,9 +59,9 @@ else {
   <h2>View Profiles</h2>
   <p>put basic info when record gets shown, location</p>
 
-  <img class="profile_image" src="ayyub.jpg"> </img> <br>
+  <img class="profile_image" src=""> </img> <br>
 
-  <?php print_r($_GET['link']); ?>
+  <?php print_r($_GET); ?>
   <?php print_r($_POST); ?>
 </article>
 
@@ -91,15 +91,24 @@ else {
 
     ?>
 
-    <td><?php echo $pid; ?><span><a class='update_links' href='update.php?link=<?php echo $pid; ?>'></a></span></td>
-    <td><?php echo $fname; ?><span><a class='update_links' href='update.php?link=<?php echo $pid; ?>'></a></span></td>
-    <td><?php echo $lname; ?><span><a class='update_links' href='update.php?link=<?php echo $pid; ?>'></a></span></td>
-    <td><?php echo $dob; ?><span><a class='update_links' href='update.php?link=<?php echo $pid; ?>'></a></span></td>
-    <td><?php echo $sex; ?><span><a class='update_links' href='update.php?link=<?php echo $pid; ?>'></a></span></td>
+    <td><?php echo $pid; ?></td>
+    <td><?php echo $fname; ?></td>
+    <td><?php echo $lname; ?></td>
+    <td><?php echo $dob; ?></td>
+    <td><?php echo $sex; ?></td>
 
 
-    <td><a class='profile_links' href='profile.php?link=<?php echo $pid; ?>'></a>
-    </td>
+    <td><span><a class='profile_links' href='profile.php?link=<?php echo $pid; ?>'></a>
+    </span></td>
+
+    <td><span><a class='update_links' href='update.php?link=<?php echo $pid; ?>'></a></span></td>
+
+    <td><span><a class='upload_links' href='upload.php?link=<?php echo $pid; ?>'></a></span></td>
+
+    <td><span><a class='download_links' href='download.php?link=<?php echo $pid; ?>'></a></span></td>
+
+    <td><span><a class='delete_links' href='delete.php?link=<?php echo $pid; ?>'> </a>
+    </span></td>
     </tr>
 
 
@@ -120,7 +129,7 @@ else {
   <a class="side_links" href="registration.php">Register a Profile</a> <br>
   <a class="side_links" href="">Update a Profile</a> <br>
   <a class="side_links" href="">Delete a Profile</a> <br>
-
+  <a class="side_links" href="">Upload Media</a> <br>
 
 
   <h3>Recent</h3>

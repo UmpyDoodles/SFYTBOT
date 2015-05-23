@@ -67,7 +67,7 @@ h1 {
 }
 
 h3 table{
-  
+
 }
 
 #loginForm{
@@ -141,7 +141,7 @@ a:hover{
     width: 16px;
     height: 16px;
     background-repeat: no-repeat;
-    background: url(link.png);
+    background: url(user.png);
     display: block;
 }
 
@@ -152,5 +152,32 @@ a:hover{
   background: url(add.png);
   display: block;
   float: right;
+}
 
+.delete_links{
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background: url(recycle_bin.png);
+  display: block;
+  float: right;
+
+}
+
+.download_links{
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background: url(download.png);
+  display: block;
+  float: right;
+}
+
+.upload_links{
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background: url(upload.png);
+  display: block;
+  float: right;
 }
