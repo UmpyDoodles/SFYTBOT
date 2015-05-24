@@ -63,7 +63,17 @@
     <td><?php echo $addressLineTwo; ?></td>
     <td><?php echo $PostTown; ?></td>
     <td><?php echo $pid; ?></td>
+    <td><span><a class='profile_links' href='profile.php?link=<?php echo $pid; ?>'></a>
+    </span></td>
 
+    <td><span><a class='update_links' href='update.php?link=<?php echo $pid; ?>'></a></span></td>
+
+    <td><span><a class='upload_links' href='upload.php?link=<?php echo $pid; ?>'></a></span></td>
+
+    <td><span><a class='download_links' href='download.php?link=<?php echo $pid; ?>'></a></span></td>
+
+    <td><span><a class='delete_links' href='delete.php?link=<?php echo $pid; ?>'> </a>
+    </span></td>
 
     </tr>
 

@@ -17,16 +17,17 @@
 
 
   <article id="search_area">
-
+    <h2>Location:</h2>
     <?php print_r($_GET); ?>
     <?php print_r($_POST); ?>
     <?php print_r($_SESSION); ?>
-    <?php echo $fname; ?>
+
+
 
 </article>
 
     <article>
-    <h2>View the latest info about users first and lastname</h2>
+    <h3>View the latest info about users first and lastname</h3>
     <table style="width:100%; border-spacing:0;">
               <tr>
                 <th>Profile ID</th>

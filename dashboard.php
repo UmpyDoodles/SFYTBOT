@@ -10,8 +10,14 @@ $profile = "select * from profile where firstName='$fname' OR  lastName='$lname'
 
 $profile_data = mysqli_query($connection, $profile);
 
-if(mysqli_num_rows($result)>0){
+if(mysqli_num_rows($profile_data)>0){
    $num_rows = mysqli_num_rows($profile_data);
+   $image_dir = "data/images/10448183_606406696136539_1658230917773196211_n.jpg";
+   //$pid = $row[0];
+   //$fname = $row[1];
+   //$lname = $row[2];
+   //$dob = $row[3];
+   //$sex = $row[4];
 }
 else {
   $num_rows = "0";
@@ -38,9 +44,17 @@ else {
 
 <article class="image_area">
   <h2>View Profiles</h2>
-  <p>put basic info when record gets shown, location</p>
+  <p>put basic info from records that get hovered over, use google api for location</p>
 
-  <img class="profile_image" src=""> </img> <br>
+  <img class="profile_image" src="<?php echo $image_dir; ?>"> </img> <br>
+
+  <p>Full Name: <?php echo $fname . " " . $lname; ?></p>
+
+  <p>Age:</p>
+
+  <p>Location:</p>
+
+  <p><a href="profile.php?link=<?php echo $pid; ?>">Go to this profile:</a></p>
 
   <?php print_r($_GET); ?>
   <?php print_r($_POST); ?>
@@ -49,7 +63,7 @@ else {
 </article>
 
 <article id="search_area">
-<h2>Find Records</h2>
+<h2>Find Profiles</h2>
 <p>the search will allow data to be read from the profile table if any matches are found those rows will be display with links.</p>
 <form id="searchForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <p>Firstname:</p>
@@ -130,11 +144,12 @@ else {
   <h3>Account</h3>
   <a href="logout.php">Logout, <?php echo $_SESSION['uname']; ?></a> <br>
 
-  <h3>Mangage Profiles</h3>
-  <a class="side_links" href="registration.php">Register a Profile</a> <br>
+  <h3>CRUD</h3>
+  <a class="side_links" href="registration.php">Create a new Profile</a> <br>
+
   <a class="side_links" href="">Update a Profile</a> <br>
   <a class="side_links" href="">Delete a Profile</a> <br>
-  <a class="side_links" href="">Upload Media</a> <br>
+  <a class="side_links" href="upload.php">Upload Media</a> <br>
 
 
   <h3>Recent</h3>

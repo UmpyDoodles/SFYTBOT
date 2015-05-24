@@ -1,7 +1,7 @@
 
 <article class="image_area">
-  
-<h1><?php echo "$fname" . " " . "$lname"; ?> Profile</h1>
+
+<h2><?php echo "$fname" . " " . "$lname"; ?> Profile</h2>
 
 <p>This page is a dynamic page which the users name should be visible on. we need conditional code!, image should be pulled from image tabe with relation to profile</p>
 

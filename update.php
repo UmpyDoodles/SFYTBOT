@@ -128,9 +128,11 @@ mysqli_close($connection);
   <a href="logout.php">Logout, <?php echo $_SESSION['uname']; ?></a> <br>
   <a href="dashboard.php">Dashboard</a> <br>
 
-  <h3>Mangage Profiles</h3>
-  <a class="side_links" href="registration.php">Register a Profile</a> <br>
-  <a class="side_links" href="update.php">Update a Profile</a> <br>
+
+  <h3>CRUD</h3>
+  <a class="side_links" href="registration.php">Create a new Profile</a> <br>
+
+  <a class="side_links" href="">Update a Profile</a> <br>
   <a class="side_links" href="">Delete a Profile</a> <br>
 
 
